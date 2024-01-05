@@ -1,0 +1,245 @@
+.employees {
+  &__inner {
+    padding-top: 75px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__user {
+    &-outer {
+      width: 100%;
+      max-width: 290px;
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 600px;
+      overflow-x: hidden;
+      overflow-y: auto;
+        scrollbar-width: auto;
+        scrollbar-color: #c8c186 #ffffff;
+
+      /* Chrome, Edge, and Safari */
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--gold-10);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--gold-20);
+        border-radius: 10px;
+
+        @media(any-hover: hover) {
+          &:hover {
+            background-color: var(--gold-40);
+          }
+        }
+      }
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+
+    @media(any-hover: hover) {
+      &:hover {
+        & .employees__user-name {
+          color: var(--gold);
+        }
+      }
+    }
+
+    &.active {
+      & .employees__user-name {
+        color: var(--gold);
+      }
+    }
+
+    &-img {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      border-radius: 50%;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-name {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+
+      transition: color .2s linear;
+    }
+
+    &-pos {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__info {
+    &-outer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+  }
+
+  &__table {
+    max-height: 437px;
+    display: flex;
+    flex-direction: column;
+    &-row {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gold-20);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    &-head {
+      font-size: 16px;
+      font-weight: 600;
+
+      &-row {
+        border-bottom: 1px solid var(--gold);
+      }
+    }
+
+    &-body {
+      overflow-x: hidden;
+      overflow-y: auto;
+        scrollbar-width: auto;
+        scrollbar-color: #c8c186 #ffffff;
+
+      /* Chrome, Edge, and Safari */
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--gold-10);
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--gold-20);
+        border-radius: 10px;
+
+        @media(any-hover: hover) {
+          &:hover {
+            background-color: var(--gold-40);
+          }
+        }
+      }
+    }
+
+    &-item {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    &-type {
+      text-align: right;
+    }
+
+    &-rating {
+      width: 70px;
+      min-width: 70px;
+    }
+
+    &-emp {
+      width: 100%;
+    }
+
+    &-result {
+      min-width: 140px;
+      text-align: right;
+      justify-content: flex-end;
+    }
+  }
+
+  &__choise {
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media(max-width: 1100px) {
+  .employees {
+    &__inner {
+      flex-direction: column;
+      gap: 70px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__user {
+      &-outer {
+        max-width: 100%;
+      }
+      &-list {
+        max-height: 230px;
+      }
+
+      &-name {
+        font-size: 14px;
+      }
+
+      &-pos {
+        font-size: 12px;
+      }
+    }
+
+    &__table {
+      &-head {
+        font-size: 12px;
+        &-row {
+          padding: 16px 0;
+        }
+      }
+
+      &-item {
+        font-size: 10px;
+      }
+    }
+  }
+}

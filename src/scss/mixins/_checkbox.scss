@@ -1,0 +1,66 @@
+/* stylelint-disable */
+
+@mixin custom-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  @media(any-hover: hover) {
+    &:hover {
+      color: var(--gold);
+    }
+  }
+
+  &__placeholder {
+    color: inherit;
+  }
+
+  &__field {
+    appearance: none;
+    position: absolute;
+  }
+
+  &__content {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    color: inherit;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: inherit;
+      border: 1px solid currentColor;
+      border-radius: 3px;
+      width: inherit;
+      height: inherit;
+      box-sizing: border-box;
+    }
+
+    &-ico {
+      opacity: 0;
+      transition: opacity .15s linear;
+      width: 12px;
+      height: 12px;
+      object-fit: contain;
+      color: inherit;
+    }
+  }
+}
+
+.custom-checkbox__field:checked + .custom-checkbox__content > .custom-checkbox__content-ico {
+  opacity: 1;
+}
+
+.custom-checkbox__field:disabled + .custom-checkbox__content {
+  opacity: 0.4;
+  pointer-events: none;
+}

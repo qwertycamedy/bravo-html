@@ -1,0 +1,29 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --ff: "Onest", sans-serif;
+  --content-width: 1200px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --header-height: 100px;
+  --header-height-mob: 92px;
+
+  // colors
+  --light: #fff;
+  --dark: #000;
+  --crystal: #092C3F;
+  --gold: #D1C186;
+  --gold-hover: #B7A874;
+  --gold-active: #A29566;
+  --gold-10: #D1C1861A;
+  --gold-20: #D1C18633;
+  --gold-40: #d1c1866d;
+
+  --wh: #128C7E;
+  --wh-hover: #0D695E;
+  --wh-active: #0A4E46;
+
+  --hero-grad-desk: linear-gradient(106deg, #092C3F -4.48%, rgba(9, 44, 63, 0.30) 107.31%);
+  --hero-grad-mob: linear-gradient(102deg, #092C3F -20.28%, rgba(9, 44, 63, 0.30) 106.91%);
+}
